@@ -1,0 +1,30 @@
+{
+  "name": "nusbuses",
+  "version": "1.0.0",
+  "description": "NUS Buses api for javascript",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Koh Chi Hao",
+    "email": "kohchihao@gmail.com",
+    "url": "kohchihao.com"
+  },
+  "keywords": [
+    "nus",
+    "bus",
+    "api",
+    "nus-bus",
+    "route",
+    "time",
+    "nusbuses"
+  ],
+  "author": "Koh Chi Hao <kohchihao@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.partial": "^4.2.1",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  }
+}
