@@ -1,6 +1,6 @@
 {
   "name": "nusbuses",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "NUS Buses api for javascript",
   "main": "app.js",
   "scripts": {

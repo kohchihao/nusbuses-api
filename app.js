@@ -42,8 +42,14 @@ const getAllBuses = () => {
   return rp(ALL_BUSES_URL);
 }
 
-const getBus = (busId) => (busId) => {
-  return rp(PUBLIC_URL+busId);
+const getBus = (busId) => (busVar) => {
+  let bus; 
+  if (busVar === undefined) {
+    bus = busId;
+  } else {
+    bus = busVar;
+  }
+  return rp(PUBLIC_URL+bus);
 }
 
 module.exports.getBus = getBus();
