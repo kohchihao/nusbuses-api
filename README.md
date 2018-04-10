@@ -8,15 +8,15 @@ $ npm install --save nusbuses
 ## Usage
 
 ```javascript
-const NUSBuses = require('nusbuses');
-var bus = new NUSBuses;
+const nusbuses = require('nusbuses');
 
-bus.getCOM2()
+nusbuses.getAllBuses()
 .then(function(data) {
-  console.log(data)
-}).catch(function (err) {
-  console.log(err)
-});
+  console.log(data);
+}).catch(function(err) {
+  console.log(err);
+})
+
 
 //data 
 /*{

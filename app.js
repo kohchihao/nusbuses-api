@@ -1,5 +1,5 @@
-var rp = require('request-promise');
-var _partial = require('lodash.partial');
+let rp = require('request-promise');
+let _partial = require('lodash.partial');
 
 const ALL_BUSES_URL = 'https://nextbus.comfortdelgro.com.sg/eventservice.svc/BusStops';
 const PUBLIC_URL = 'https://nextbus.comfortdelgro.com.sg/eventservice.svc/Shuttleservice?busstopname=';
@@ -38,55 +38,49 @@ const UTown = 'UTown';
 const LT13_OPP = 'LT13-OPP';
 const YIH = 'YIH';
 
-var NUSBUSES = function() {
-
-  this.getAllBuses = getAllBuses;
-  this.getBus = getBus;
-  this.getAS7 = _partial(getBus,AS7);
-  this.getBIZ2 = _partial(getBus,BIZ2);
-  this.getBotanicGardenMRT = _partial(getBus,BG_MRT);
-  this.getOeiTiongHamBuilding = _partial(getBus,BUKITTIMAH_BTC2);
-  this.getCentralLibary = _partial(getBus,CENLIB);
-  this.getCollegeGreenHostel = _partial(getBus,CGH);
-  this.getCOM2 = _partial(getBus,COM2);
-  this.getComputerCentre = _partial(getBus,COMCEN);
-  this.getEA = _partial(getBus,BLK_EA_OPP);
-  this.getKentRidgeBusTerminal = _partial(getBus,KR_BT);
-  this.getKentRidgeMRT = _partial(getBus,KR_MRT);
-  this.getKentVale = _partial(getBus,KV);
-  this.getLT13 = _partial(getBus,LT13);
-  this.getLT29 = _partial(getBus,LT29);
-  this.getMuseum = _partial(getBus,MUSEUM);
-  this.getOppHSSML = _partial(getBus,HSSML_OPP);
-  this.getOppKentRidgeMRT = _partial(getBus,KR_MRT_OPP);
-  this.getOppNUSS = _partial(getBus,NUSS_OPP);
-  this.getOppPGP12 = _partial(getBus,PGP12_OPP);
-  this.getOppUHall = _partial(getBus,UHALL_OPP);
-  this.getOppStaffClub = _partial(getBus,STAFFCLUB_OPP);
-
-  this.getPGP12 = _partial(getBus,PGP12);
-  this.getPGP1415 = _partial(getBus,PGP14_15);
-  this.getPGP7 = _partial(getBus,PGP7);
-  this.getPGPR = _partial(getBus,PGP);
-  this.getPrinceGeorgesPark = _partial(getBus,PGPT);
-  this.getRafflesHall = _partial(getBus,RAFFLES);
-
-  this.getS17 = _partial(getBus,S17);
-  this.getUHall = _partial(getBus,UHALL);
-  this.getStaffClub = _partial(getBus,STAFFCLUB);
-  this.getUTown = _partial(getBus,UTown);
-  this.getOppLT13 = _partial(getBus,LT13_OPP);
-  this.getYIH = _partial(getBus,YIH);
-  
-
-  function getAllBuses() {
-    return rp(ALL_BUSES_URL);
-  }
-
-  function getBus(busId) {
-    return rp(PUBLIC_URL+busId);
-  }
-
+const getAllBuses = () => {
+  return rp(ALL_BUSES_URL);
 }
 
-module.exports = NUSBUSES;
+const getBus = (busId) => (busId) => {
+  return rp(PUBLIC_URL+busId);
+}
+
+module.exports.getBus = getBus();
+module.exports.getAllBuses = getAllBuses;
+module.exports.getAS7 = getBus(AS7);
+module.exports.getBIZ2 = getBus(BIZ2);
+module.exports.getBotanicGardenMRT = getBus(BG_MRT);
+module.exports.getOeiTiongHamBuilding = getBus(BUKITTIMAH_BTC2);
+module.exports.getCentralLibary = getBus(CENLIB);
+module.exports.getCollegeGreenHostel = getBus(CGH);
+module.exports.getCOM2 = getBus(COM2);
+module.exports.getComputerCentre = getBus(COMCEN);
+module.exports.getEA = getBus(BLK_EA_OPP);
+module.exports.getKentRidgeBusTerminal = getBus(KR_BT);
+module.exports.getKentRidgeMRT = getBus(KR_MRT);
+module.exports.getKentVale = getBus(KV);
+module.exports.getLT13 = getBus(LT13);
+module.exports.getLT29 = getBus(LT29);
+module.exports.getMuseum = getBus(MUSEUM);
+module.exports.getOppHSSML = getBus(HSSML_OPP);
+module.exports.getOppKentRidgeMRT = getBus(KR_MRT_OPP);
+module.exports.getOppNUSS = getBus(NUSS_OPP);
+module.exports.getOppPGP12 = getBus(PGP12_OPP);
+module.exports.getOppUHall = getBus(UHALL_OPP);
+module.exports.getOppStaffClub = getBus(STAFFCLUB_OPP);
+module.exports.getPGP12 = getBus(PGP12);
+module.exports.getPGP1415 = getBus(PGP14_15);
+module.exports.getPGP7 = getBus(PGP7);
+module.exports.getPGPR = getBus(PGP);
+module.exports.getPrinceGeorgesPark = getBus(PGPT);
+module.exports.getRafflesHall = getBus(RAFFLES);
+module.exports.getS17 = getBus(S17);
+module.exports.getUHall = getBus(UHALL);
+module.exports.getStaffClub = getBus(STAFFCLUB);
+module.exports.getUTown = getBus(UTown);
+module.exports.getOppLT13 = getBus(LT13_OPP);
+module.exports.getYIH = getBus(YIH);
+
+
+

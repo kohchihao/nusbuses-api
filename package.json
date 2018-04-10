@@ -1,6 +1,6 @@
 {
   "name": "nusbuses",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "NUS Buses api for javascript",
   "main": "app.js",
   "scripts": {
@@ -21,6 +21,10 @@
     "nusbuses"
   ],
   "author": "Koh Chi Hao <kohchihao@gmail.com>",
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/kohchihao/nusbuses-api"
+  },
   "license": "ISC",
   "dependencies": {
     "lodash.partial": "^4.2.1",
